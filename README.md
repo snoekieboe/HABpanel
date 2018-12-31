@@ -13,4 +13,16 @@
 ![Alt text](vacuum.png?raw=true "Vacuum Control Screen")
 
 
+![Alt text](music1.png?raw=true "Vacuum Control Screen")
+
+
+![Alt text](music2.png?raw=true "Vacuum Control Screen")
+
+
+![Alt text](weather.png?raw=true "Vacuum Control Screen")
+
+
+![Alt text](fireplace.png?raw=true "Vacuum Control Screen")
+
+
 
