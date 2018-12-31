@@ -10,5 +10,7 @@
 
 * the widgets require no coding, all settings are editable through the HABpanel interface (select items etc)
 
+![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+
 
 
