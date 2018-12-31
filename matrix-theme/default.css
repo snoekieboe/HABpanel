@@ -1,0 +1,1632 @@
+charset "UTF-8";
+
+
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/matrix-theme/Roboto-Thin.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url('/static/matrix-theme/Roboto-Light.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url('/static/matrix-theme/Roboto-Regular.ttf') format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+:root {
+	font-weight: 100;
+ -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */	
+}
+
+:root {
+  --body-bg: #000000;
+  --body-color: #a4a4a4;
+  --primary-color: #26bf75;
+  --box-bg: rgba(255, 255, 255, .01);
+  --header-bg: var(--body-bg);
+  --widget-design-bg: #191716;
+  --widget-text-color: #a4a4a4;
+  --widget-border-radius: 3px;
+  --widget-box-shadow: 0 1px 8px 0 rgba(0, 0, 0, .8), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  --icon-color-filter: invert(34%) sepia(100%) hue-rotate(116deg) saturate(1000%);
+  --icon-color-off-filter: invert(60%) sepia(80%) hue-rotate(180deg);
+  --icon-backdrop-filter: invert(60%) sepia(100%) hue-rotate(165deg) opacity(15%);
+  --chart-stroke: #456;
+  --chart-fill: #89a;
+  --chart-tooltip: #fff;
+  --colorpicker-border: #191716;
+  --colorpicker-stroke: #456;
+  --colorpicker-fill: #89a;
+  --image-border: #191716;
+  --switch-off-color: #89a;
+  --slider-pointer-color: #234;
+  --slider-pointer-bg-color: #def;
+  --slider-ceil-color: #def;
+  --slider-bubble-bg-color: #09120f;
+  --slider-bubble-border-color: #fff;
+  --slider-bubble-color: #a4a4a4;
+}
+
+body {
+	font-family: Roboto;
+	background: #171c19;
+	margin: 5px;
+}
+
+
+/* Don't uppercase drawer menu entries */
+
+.drawer ul.menu li {
+    text-transform: none !important;
+}
+
+/* Graph overrides */
+
+.x-axis g.tick:nth-child(4n+4),
+.x-axis g.tick:nth-child(4n+2) {
+    display: none;
+}
+
+.y-axis g.tick:nth-child(2n+1),
+.y2-axis g.tick:nth-child(2n+1) {
+    display: none;
+}
+
+.chart-legend {
+    display: none;
+}
+
+.chart-content {
+    height: calc(100% + 1.5em) !important;
+}
+
+.dot-series .dot {
+    display: none;
+}
+
+.dot-series .dot:nth-child(45n) {
+    display: inherit !important;
+    stroke: var(--primary-color);
+    fill: var(--primary-color);
+    r: 1;
+}
+
+.area-series {
+    fill: var(--chart-fill) !important;
+    stroke: var(--chart-fill) !important;
+}
+
+.line-series {
+    stroke: var(--chart-fill) !important;
+}
+
+/* Overrides for the label widget */
+
+.labelwidget-content {
+    margin: auto;
+    width: 100%;
+    text-align: left;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* Overrides for the dummy widget */
+
+.dummy-content small {
+    font-size: 0.5em;
+    vertical-align: super;
+}
+
+.dummy-content {
+    text-align: left;
+}
+
+.dummy .icon.backdrop {
+    right: 0;
+}
+
+.dummy-content span:not(.value) {
+    font-size: 13px;
+}
+
+/* NEW */
+.btn-group2, .btn-group-vertical {
+    position: absolute;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Styles for the custom items */
+
+.leftborder {
+    float: left;
+    margin: 8px 10px 10px 0;
+    height: 2.5em;
+    width: 7px;
+    border-left: #646361 solid 2px;
+    border-top: #646361 solid 2px;
+    border-bottom: #646361 solid 2px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.leftborder2 {
+    float: left;
+    margin: 8px 10px 10px 0;
+    height: 3em;
+    width: 7px;
+    border-left: #646361 solid 2px;
+    border-top: #646361 solid 2px;
+    border-bottom: #646361 solid 2px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.leftborder-label {
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+
+}
+
+.leftborder2-label {
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.switch-leftborder .btn-primary {
+    background-color: var(--primary-color);
+    border-color: black;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+.switch-leftborder2 .btn-primary {
+    background-color: var(--primary-color);
+    border-color: black;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: black;
+}
+
+.switch-leftborder .btn-primary:active {
+    background-color: hsl(29, 100%, 50%);
+    color: black;
+}
+.switch-leftborder .btn-default {
+    background-color: #c2c7c3;
+    border-color: black;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+/* RZSlider overrides for the custom widget */
+
+.slider-leftborder .rzslider {
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+.slider-leftborder .rzslider .rz-pointer {
+    width: 16px;
+    height: 16px;
+    top: -6px;
+    background-color: #c2c7c3;
+}
+
+.slider-leftborder .rzslider .rz-pointer:after {
+    display: none;
+}
+
+
+
+/* Color picker overrides for the custom widget */
+
+.colorpicker-leftborder .colorpicker-content-flex {
+    margin-left: 5px;
+}
+
+.colorpicker-leftborder .c-ckolor__picker {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: 1px solid #61635e;
+}
+
+
+
+/* Styles for the blinds widget */
+
+.blinds-leftborder .blades {
+    display: inline-block;
+}
+
+.blinds-leftborder .blades .blade {
+    display: block;
+    width: 80px;
+    height: 5px;
+    margin: 3px;
+    background-color: #61635e;
+}
+
+.blinds-leftborder .blades .blade.down {
+    display: block;
+    width: 80px;
+    height: 5px;
+    margin: 3px;
+    background-color: #c2c7c3;
+}
+
+
+.blinds-leftborder .rzslider {
+    margin-top: 5px;
+    margin-left: 0;
+}
+
+.blinds-leftborder .rzslider .rz-pointer {
+    width: 16px;
+    height: 16px;
+    left: -6px !important;
+    background-color: #c2c7c3;
+}
+
+.blinds-leftborder .rzslider .rz-pointer:after {
+    display: none;
+}
+
+.switch-leftborder.playback .btn-default {
+    background: transparent;
+    border-color: #61635e;
+    color: #61635e;
+}
+
+
+.drawer {
+    background: #000;
+}
+.drawer ul.menu {
+	background: #000;
+}
+.drawer ul.menu li {
+    font-weight: 300;
+}
+.drawer ul.menu li.active:not(.head):after {
+	display: none;
+}
+.drawer ul.menu li.active:not(.head) {
+    background: #19201c;
+    color: white;
+}
+.icon-tile.colorize {
+    filter: invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%);
+    -webkit-filter: invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%);
+    filter: var(--icon-color-filter, invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%));
+    -webkit-filter: var(--icon-color-filter, invert(60%) sepia(100%) hue-rotate(185deg) saturate(1000%));
+}
+.dashboard-title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 30px;
+    font-weight: 100;
+}
+.header {
+    position: static;
+    margin: 0px;
+    width: 100%;
+    /* padding: 8px; */
+    z-index: 99;
+    background: #000;
+    background: var(--header-bg,#000);
+}
+.container {
+	padding-top: 10px;
+}
+
+
+@media only screen {
+    /* For mobile: */
+    .section {
+    }
+    .section .hueSelect {
+      max-width: 100%;
+      padding-right: 15px;
+    }
+
+	.section .widget2 {
+		width: 100%;
+		float: left;
+		padding-bottom: 15px;
+	        background: #2c2f2d;
+	        overflow: hidden;
+	        padding: 10px 10px 5px 10px;
+	        margin-bottom: 3px;
+	        margin-right: 3px;
+	}
+        .section .widget2 .col1 {
+                width: 50%;
+                float: left;
+        }
+	.section .widget {
+		width: 100%;
+		float: left;
+		padding-bottom: 15px;
+	}
+        .section .widget .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget .col20 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget4 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget4 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget4 .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget4 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget4 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget4 .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget4 .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget4 .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget4 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget4 .col20 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget5 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget5 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget5 .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget5 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget5 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget5 .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget5 .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget5 .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget5 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget5 .col20 {
+                width: 20%;
+                float: left;
+        }		
+	.section .widget.wide {
+		width: 100%;
+		float: left;
+	}
+	.section .bigDash {
+		margin-left: auto;
+		width: 100%;
+	    margin-right: auto;
+	}      
+	.header a {
+		display: none;
+	}	  
+}
+
+
+
+@media only screen and (min-width: 850px) {
+    /* For tablet: */
+    .section {
+    }
+    .section .hueSelect {
+      width: 33%;
+      padding-right: 70px;
+    }    
+	.section .widget2 {
+		width: 33%;
+		float: left;
+		padding-bottom: 15px;
+	        background: #2c2f2d;
+	        overflow: hidden;
+	        padding: 10px 10px 5px 10px;
+	        margin-bottom: 3px;
+	        margin-right: 3px;
+	}
+        .section .widget2 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget2 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget2 .col20 {
+                width: 20%;
+                float: left;
+        }
+	
+	.section .widget {
+		width: 33%;
+		float: left;
+	}
+        .section .widget .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget .col20 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget4 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget4 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget4 .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget4 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget4 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget4 .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget4 .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget4 .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget4 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget4 .col20 {
+                width: 20%;
+                float: left;
+        }
+	.section .widget5 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget5 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget5 .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget5 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget5 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget5 .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget5 .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget5 .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget5 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget5 .col20 {
+                width: 20%;
+                float: left;
+        }
+	.section .widgetMenu {
+		width: 100%;
+		float: left;
+	}		
+	.section .widgetMenu .col1 {
+                width: 120px;
+                float: left;
+    }
+	.section .widgetMenu .col2 {
+                width: 100px;
+                float: left;
+    }
+	.section .widgetMenu2 {
+		width: 100%;
+		float: left;
+	}		
+	.section .widgetMenu .col1 {
+                width: 33%px;
+                float: left;
+    }
+	.section .widgetMenu .col2 {
+                width: 33%px;
+                float: left;
+    }		
+	.section .widget.wide {
+		width: 100%;
+		float: left;
+	}
+	.section .bigDash {
+		margin-left: auto;
+		width: 33%;
+	    margin-right: auto;
+	}     
+	.header a {
+		display: inline;
+	}
+}
+
+
+
+@media only screen and (min-width: 1000px) {
+    /* For desktop: */
+    .section {
+    }
+    .section .hueSelect {
+      width: 33%;
+      padding-right: 70px;
+    }
+	.section .widget2 {
+		width: 33%;
+		float: left;
+		padding-bottom: 15px;
+		background: #2c2f2d;
+		overflow: hidden;
+		padding: 10px 10px 5px 10px;
+		margin-bottom: 3px;
+		margin-right: 3px;
+	}
+        .section .widget2 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget2 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget2 .col20 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget2 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget2 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget2 .col60 {
+                width: 60%;
+                float: left;
+        }
+        .section .widget2 .col40 {
+                width: 40%;
+                float: left;
+        }
+
+	.section .widget {
+		width: 33%;
+		float: left;
+	}
+        .section .widget .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget .col20 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget4 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget4 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget4 .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget4 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget4 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget4 .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget4 .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget4 .col33 {
+                width: 33%;
+                float: left;
+        }
+        .section .widget4 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget4 .col20 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget5 {
+                width: 20%;
+                float: left;
+        }
+        .section .widget5 .col1 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget5 .col100 {
+                width: 100%;
+                float: left;
+        }
+        .section .widget5 .col80 {
+                width: 80%;
+                float: left;
+        }
+        .section .widget5 .col75 {
+                width: 75%;
+                float: left;
+        }
+        .section .widget5 .col50 {
+                width: 50%;
+                float: left;
+        }
+        .section .widget5 .col40 {
+                width: 40%;
+                float: left;
+        }
+        .section .widget5 .col33 {
+                width: 30%;
+                float: left;
+        }
+        .section .widget5 .col25 {
+                width: 25%;
+                float: left;
+        }
+        .section .widget5 .col20 {
+                width: 20%;
+                float: left;
+        }
+	.section .widgetMenu {
+		width: 230px;
+		float: left;
+	}		
+	.section .widgetMenu .col1 {
+                width: 120px;
+                float: left;
+    }
+	.section .widgetMenu .col2 {
+                width: 100px;
+                float: left;
+    }
+	.section .widgetMenu2 {
+		width: 300px;
+		float: left;
+	}		
+	.section .widgetMenu .col1 {
+                width: 100px;
+                float: left;
+    }
+	.section .widgetMenu .col2 {
+                width: 100px;
+                float: left;
+    }
+	
+	
+	.section .widget.wide {
+		width: 33%;
+		float: left;
+	}
+	.section .bigDash {
+	margin-left: auto;
+	    width: 33%;
+/*	    min-width: 320px;	*/
+	    min-width: 280px;
+	    margin-right: auto;
+	}   
+	.header a {
+		display: inline;
+	} 
+}
+
+
+.section {
+	width: 100%;
+	background: #19201c;
+	padding: 10px 10px 5px 10px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	margin-right: 10px;	
+	float: left;
+	text-align: left;
+	color: white;
+}
+.section .description {
+    text-transform: uppercase;
+    text-align: center;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #4e4b4b;
+    border-radius: 5px;
+    padding: 4px 2px 2px 2px;
+}
+.section a {
+  color: #ff2c0a;
+}
+.section .title {
+	clear: left;
+	overflow: auto;
+  	zoom: 1;
+}
+.section .title  {
+	font-size: 22px;
+	font-weight: 100;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+}
+.section .title2  {
+	font-size: 18px;
+	font-weight: 100;
+	padding-bottom: 5px;
+}
+.section .title .name {
+	font-size: 18px;
+	font-weight: 100;
+	display: inline-block;
+	float: left;
+}
+.section .title .summary {
+	display: inline-block;
+	float: left;
+    border: 1px solid #565f58;
+    border-radius: 5px;
+    padding: 4px 10px 2px 10px;
+    font-size: 14px;
+    color: #565f58;
+    margin-left: 10px;
+    font-weight: 200;
+    margin-top: 5px;
+}
+.section .sectionIconContainer {
+	position: relative;
+	width: 100%;
+}
+.section .sectionIcon {
+	width: 32px;
+	height: 32px;
+	position: absolute;
+	right: 0px;
+}
+.section .sectionIcon svg {
+    stroke: #565f58;
+    fill: #565f58;
+    stroke-width: 1px;
+}
+.section .sectionIconContainer2 {
+	position: relative;
+	width: 100%;
+}
+.section .sectionIconTemp {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 40px;
+}
+.section .sectionIconTempValue {
+	position: absolute;
+	font-weight: bold;
+	right: 0px;
+}
+.section .sectionIconFukt {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 105px;
+}
+.section .sectionIconFuktValue {
+	position: absolute;
+	font-weight: bold;	
+	right: 75px;
+}
+.section .sectionIconTemp svg {
+    stroke: #565f58;
+    fill: #565f58;
+    stroke-width: 1px;
+}
+.section .sectionIconFukt svg {
+    stroke: #565f58;
+    fill: #565f58;
+    stroke-width: 1px;
+}
+.section .bigDash {
+	float:left;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+.section .bigDash .description {
+    text-transform: uppercase;
+    text-align: center;
+    width: 37%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #4e4b4b;
+    border-radius: 5px;
+    padding: 4px 2px 2px 2px;
+}
+.section .bigDash .top {
+    clear: left;
+    margin-left: auto;
+    width: 330px;
+    margin-right: auto;
+    height: 100px;
+}
+.section .bigDash .bottom {
+    clear: left;
+    margin-left: auto;
+    width: 250px;
+    margin-right: auto;
+    height: 35px;
+}
+.section .bigDash .bottom .value {
+	padding-top: 5px;
+	padding-left: 5px;
+	padding-right: 25px;
+	float:left;
+	color: white;
+}
+.section .bigDash .top .icon {
+	width: 65px;
+	height: 65px;
+	margin-top: 15px;
+	float: left;
+}
+.section .bigDash .bottom .icon {
+	width: 30px;
+	height: 30px;
+	padding-top: 0px;
+	float: left;
+}
+.section .bigDash .graph {
+	text-align: center;
+    clear: left;	
+}
+.graph img {
+	border-bottom: 1px solid #565f58;
+}
+.graph .legend {
+    font-size: 10px;
+    text-transform: uppercase;
+    padding-top: 7px;
+    color: #aaa;
+    font-weight: 200;
+}
+
+.section .widget {
+  cursor: pointer;
+}
+.section .widget .icon {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	float: left;
+}
+.section .widgetMenu .icon {
+	width: 26px;
+    height: 26px;
+    margin-right: 5px;
+    padding-top: 8px;
+	float: left;
+}
+.section .widgetMenu2 .icon {
+	width: 26px;
+    height: 26px;
+    margin-right: 5px;
+    padding-top: 8px;
+	float: left;
+}
+.section .widget4 .icon {
+	width: 22px;
+	height: 22px;
+	margin-right: 70px;
+	float: right;
+}
+
+.section .widget5 .icon {
+	width: 30px;
+	height: 30px;
+	margin-right: 10px;
+	float: left;
+}
+
+
+.section .icon svg, .section .control svg {
+  stroke-width: 2px;
+}
+.section .icon.off svg {
+  stroke: #565f58;
+  fill: #565f58;
+}
+.section .icon.on svg {
+  stroke: #26bf75;
+  fill: #26bf75;
+}
+.section .icon.warn svg {
+  stroke: #ff2c0a;
+  fill: #ff2c0a;
+  animation: blinker 1s linear infinite;
+}
+.section .icon.blink svg {
+  stroke: #00afb8;
+  fill: #00afb8;
+	animation: blinker 1s linear infinite;
+}
+@keyframes blinker {  
+	50% { opacity: 0; }
+}	
+.section .icon.wind svg {
+  stroke: #565f58;  
+  fill: #565f58;  
+}
+.section .icon.on.wind svg {
+  stroke: #26bf75;  
+  fill: #26bf75;  
+}
+.section .icon.wind {
+  	animation: windy 0.5s ease-in-out infinite;
+}
+@keyframes windy {
+    0% {
+        transform: rotate(310deg);
+    }
+    50% {
+        transform: rotate(316deg);
+    }
+    100% {
+        transform: rotate(310deg);
+    }
+}
+
+
+.section .widget.disabled {
+  opacity: 0.2;
+}
+.section .widget.disabled:active .icon svg {
+  stroke: #565f58;
+  fill: #565f58;
+}
+.section .widget.disabled:active .name {
+  color:  white;
+}
+.section .widget.disabled .control:active {
+  background-color: #393d3a;
+}
+
+.section .widget:active .icon svg {
+  stroke: #fff;
+  fill: #fff;
+	-webkit-transition: 0.2s;
+}
+.section .widget:active .name {
+  color:  #565f58;
+  fill:  #565f58;
+	-webkit-transition: 0.2s;
+}
+
+
+.section .widget.wide .name {
+	width: 250px;
+}
+.section .widget .name {
+	height: 35px;
+	padding-top: 6px;
+  	padding-right: 5px;
+	float: left;
+	text-transform: uppercase;
+	font-weight: 100;
+}
+.section .widget .name .value {
+	color: #fa9719;
+	font-weight: bold;
+	text-align: left;	
+}
+.section .widget .graph {
+	text-align: center;
+	padding:20px;
+	margin-left: 10px;
+}
+
+
+.section .widgetMenu .name {
+	height: 35px;
+	padding-top: 6px;
+  	padding-right: 5px;
+	float: left;
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size: 22px;	
+}
+.section .widgetMenu .name .value {
+	color: #fa9719;
+	font-weight: bold;
+	text-align: left;	
+}
+.section .widgetMenu2 .name {
+	height: 35px;
+	padding-top: 6px;
+  	padding-right: 5px;
+	float: left;
+	text-transform: uppercase;
+	font-weight: 100;
+	font-size: 22px;	
+}
+.section .widgetMenu2 .name .value {
+	color: #fa9719;
+	font-weight: bold;
+	text-align: left;	
+}
+
+.section .widget4 .name {
+        height: 35px;
+        padding-top: 6px;
+        padding-right: 5px;
+        float: left;
+        text-transform: uppercase;
+        font-weight: 100;
+}
+.section .widget4 .name .value {
+        color: #fa9719;
+        font-weight: bold;
+        text-align: left;
+}
+.section .widget4 .graph {
+        text-align: center;
+        padding:20px;
+        margin-left: 10px;
+}
+
+.section .widget .value2 {
+        padding-top: 40px;
+        padding-left: 5px;
+}
+
+.section .widget4 .value2 {
+        padding-top: 40px;
+        padding-left: 5px;
+}
+
+
+.section .widget .appLogo {
+    width: 150px;
+    margin-right: 20px;
+    margin-left: auto;
+    fill: #fa9719;
+    padding-top: 6px;
+    height: 50px;
+    color: #fa9719;
+    text-align: right;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.section .widget .sceneGroup {
+  float: right;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #565f58;
+    font-weight: 300;
+    padding-right: 20px;
+}
+.section .widget .sceneGroup .scene {
+    border: 1px solid #565f58;
+    border-radius: 5px;
+    padding: 6px 20px 6px 20px;
+    text-align: center;
+    margin-bottom: 8px;
+    width: 133px;
+    float: right;
+    margin-left: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.section .widget .sceneGroup .scene.on {
+  background-color: #393d3a;
+  border: 1px solid #393d3a;
+  color: #26bf75;
+}
+.section .widget .valueGroup {
+	padding-right: 20px;
+}
+
+.section .widget .valueGroup .value {
+	text-align: right;
+	padding-top: 6px;
+	color: #26bf75;
+	font-weight: bold;
+}
+.section .widget .valueGroup .value.warning {
+    color: #ff2c0a;
+    font-weight: 600;
+}
+.section .widget .valueGroup .value:nth-child(n+2) {
+	color: #1d4d3b;	
+}
+.section .widget4 .valueGroup {
+        padding-right: 20px;
+}
+
+.section .widget4 .valueGroup .value {
+	text-align: left;
+        /* 	text-align: right; */
+	padding-top: 6px;
+        color: #fa9719;
+        font-weight: bold;
+}
+.section .widget4 .valueGroup .value.warning {
+    color: #ff2c0a;
+    font-weight: 600;
+}
+.section .widget4 .valueGroup .value:nth-child(n+2) {
+        color: #1d4d3b;
+}
+
+
+.section .controls {
+	margin-bottom: 3px;
+	overflow: hidden;
+  zoom: 1;
+}
+.section .controlGroup {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.section .widget.wide .controlGroup {
+  clear:left;
+}
+.section .control {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background-color: #393d3a;
+  width: 40px;
+  height: 40px; 
+  float: right;
+  border-radius: 100%;
+  text-align: center;
+  color: #fa9719;
+  line-height: 41px;
+  font-weight: bold;  
+}
+.section .control.on {
+  background-color: #4a6b52;
+}
+.section .control:active {
+	background-color:	#fff;
+	-webkit-transition: 0.2s;
+}
+.section .control svg {
+  stroke: #fa9719;
+  fill: #fa9719;
+	padding: 8px;
+}
+
+
+.section .bigDash .value {
+	font-weight: 20;
+}
+.section .bigDash .top .icon svg{
+  stroke-width: 1px;
+}
+
+.section .bigDash .main {
+	font-size: 55px;
+	letter-spacing: -4px;
+	line-height: 110px;
+	float:left;
+	color: white;
+	margin-left: +25px;
+	
+}
+.section .bigDash .sub {
+	font-size: 28px;
+	color: #9ca2ad;
+	display:inline;
+	text-align: left;
+	margin-left: -35px;
+}
+
+
+.batteryGroup {
+    padding-left: 20px;
+}
+.battery {
+	width: 100%;
+	height: 90px;	
+    box-sizing: border-box;
+    padding: 10px 30px 10px 30px;
+}
+
+.battery .batteryShell {
+    height: 100%;
+    box-sizing: border-box;
+	background: #565f58;	
+    border-radius: 10px 10px 10px 10px;
+	float: left;
+    width: 95%;    
+}
+.battery .batteryTip {
+	width: 4%;
+    height: 100%;
+    float: left;
+    margin-left: 1px;
+    max-width: 8px;
+}
+.battery .batteryTip1 {
+    width: 100%;
+    height: 30%;
+}
+.battery .batteryTip2 {
+    background: #565f58;
+    border-radius: 0px 10px 10px 0px;
+    width: 100%;
+    height: 40%;
+}
+
+.battery .batteryShell .batteryLevel {
+    width: 75%;
+    height: 100%;
+    background: repeating-linear-gradient( 90deg,  #11de7b,  #11de7b 20px,  #fa9719 20px,  #fa9719 21px );
+    box-shadow: 0 0 20px 10px rgba(17, 222, 123, 0.25);
+    border-radius: 10px 0px 0px 10px;
+}
+.battery .batteryShell .batteryLevel.full {
+    width: 75%;
+    height: 100%;
+    background: #11de7b;
+    box-shadow: 0 0 20px 10px rgba(17, 222, 123, 0.25);
+    border-radius: 10px 10px 10px 10px;
+}
+.battery .batteryShell .batteryLevel.low {
+    background: repeating-linear-gradient( 90deg,  #ff2c0a,  #ff2c0a 20px,  #B82009 20px,  #B82009 21px );
+}
+.battery .batteryTip2.full {
+    background: #11de7b;
+}
+
+
+
+.fuelGroup {
+    padding-left: 20px;
+}
+.fuel {
+    width: 100%;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px 30px 10px 30px;
+}
+
+.fuel .fuelShell {
+    height: 100%;
+    box-sizing: border-box;
+	background: #565f58;	
+    border-radius: 10px 10px 10px 10px;
+	float: left;
+    width: 95%;    
+}
+.fuel .fuelTip {
+    width: 8px;
+    height: 100%;
+    float: left;
+    margin-left: 1px;    
+}
+.fuel .fuelTip1 {
+    width: 100%;
+    height: 30%;
+}
+.fuel .fuelTip2 {
+    background: #565f58;
+    border-radius: 0px 10px 10px 0px;
+    width: 100%;
+    height: 40%;
+}
+
+.fuel .fuelShell .fuelLevel {
+    width: 75%;
+    height: 100%;
+    background: repeating-linear-gradient( 90deg,  #11de7b,  #11de7b 20px,  #fa9719 20px,  #fa9719 21px );
+    /* box-shadow: 0 0 20px 10px rgba(17, 222, 123, 0.25); */
+    border-radius: 10px 0px 0px 10px;
+}
+.fuel .fuelShell .fuelLevel.low {
+    background: repeating-linear-gradient( 90deg,  #ff2c0a,  #ff2c0a 20px,  #B82009 20px,  #B82009 21px );
+}
+
+
+
+.section .controls .music {
+    width: 100%;
+    float: right;
+    padding-top: 15px;
+}
+.section .controls .music .cover {
+  width: 75px;
+    height: 75px;
+    background-size: cover;
+    margin-left: 40px;
+    margin-bottom: 20px;
+    float: left;
+}
+.section .controls .music .track {
+  width:100%;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 100;
+    color: #fa9719; 
+}
+.section .controls .music .artist {
+  width:100%;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 300;
+    color: #565f58;
+    padding-top:3px;
+    padding-bottom: 3px;
+}
+.section .controls .music .playback {
+    width: 60%;
+    height: 20px;
+    font-size: 14px;
+    font-weight: 100;
+    margin-left: auto;
+    margin-bottom: 15px;
+    float: right;
+}
+.section .controls .music .playbackTime {
+  width: 22%;
+    display: inline-block;
+    text-align: center;
+    /* border: 1px solid red; */
+    height: 100%;
+    /* line-height: 33px; */
+    float: left;
+}
+.section .controls .music .playbackBarDone {
+    background: #fa9719;
+    height: 100%;
+}
+.section .controls .music .playbackBar {
+    width: 52%;
+    display: inline-block;
+    background: #565f58;
+    height: 2px;
+    /* border: 1px solid rebeccapurple; */
+    float: left;
+    margin-top: 7px;
+}
+.section .controls .music .controlGroup {
+  margin-left: auto;
+    width: 150px;
+    padding: 0px 10px 50px 0px;
+}
+
+.section .widget .name .hue {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: 7px;
+    border-radius: 100%;
+}
+
+
+.section .hueSelect {
+    position: absolute;
+    height: 0px;
+}
+.section .hueSelect a {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    margin: 15px 0px 0px 20px;
+    border-radius: 100%;
+    border: 1px solid rgba(255,255,255,0);
+}
+.section .hueSelect a:hover, .section .hueSelect a:active {
+  border: 1px solid white;
+  -webkit-transition: 0.2s;
+ 
+}
+.section .hueSelectOptions {
+    position: relative;
+    top: 7px;
+    padding: 5px 25px 15px 10px;
+    background: #2a332e;
+    border-radius: 0px 0px 15px 15px;
+    left: 0;
+    left: -1px;
+    border-top: 1px solid #5f7167;
+}
