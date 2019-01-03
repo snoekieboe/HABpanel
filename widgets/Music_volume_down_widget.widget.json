@@ -1,0 +1,19 @@
+{
+    "name": "Music_volume_down_widget",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "playerVolume",
+            "label": "Player Volume",
+            "description": "Item for volume control"
+        },
+        {
+            "type": "number",
+            "id": "volumeStep",
+            "label": "Volume Step",
+            "description": "The amount of volume decrease per click in %"
+        }
+    ],
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<div class=\"gbtn\" ng-click=\"sendCmd(config.playerVolume, +itemValue(config.playerVolume) - config.volumeStep)\">&minus;</div>"
+}

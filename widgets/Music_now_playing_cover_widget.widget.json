@@ -1,0 +1,14 @@
+{
+    "author": "Roel S",
+    "name": "Music now playing cover art",
+    "description": "",
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<img ng-if=\"itemValue(config.albumArt)!='UNDEF'\" ng-src=\"{{itemValue(config.albumArt)}}\" width=\"600\" height=\"600\" align=\"middle\"></img>\n<img ng-if=\"itemValue(config.albumArt)=='UNDEF'\" ng-src=\"/static/matrix-theme/noalbumart.jpg\" width=\"600\" height=\"600\" align=\"middle\"></img>\n",
+    "settings": [
+        {
+            "type": "item",
+            "id": "albumArt",
+            "label": "Album Art",
+            "description": "Item for Album Art"
+        }
+    ]
+}

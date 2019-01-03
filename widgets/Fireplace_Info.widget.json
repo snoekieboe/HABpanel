@@ -1,0 +1,85 @@
+{
+    "template": "<style>\n.section {\n\twidth: 100%;\n\tbackground: #212124;\n\tpadding: 10px 10px 5px 10px;\n\toverflow: hidden;\n\tmargin-bottom: 5px;\n\tmargin-right: 10px;\t\n\tfloat: left;\n\ttext-align: left;\n\tcolor: white;\n}\n</style>\n\n<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n\n            \n   <div class=\"music_artist\">{{itemValue(config.fireplaceState)}}</div>\n   <div ng-if=\"itemValue(config.fireplaceControl) =='OFF'\" class=\"music_track\">N/A</div>\n   <div ng-if=\"itemValue(config.fireplaceControl) !='OFF'\" class=\"music_track\">{{itemValue(config.fireplaceControl)}}</div><br></br>\n\n            \n\n<div class=\"section\">\n   \n  \t<div class=\"bigDash\">\n    <div class=\"description\">Temperatuur Binnen</div>\n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.indoorTemp) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">&#176C</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#drop\"></use></svg></div>\n\t\t\t<div class=\"value\">{{itemValue(config.indoorHumidity) | number:0}} %</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=19&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>\n     \n  \t<div class=\"bigDash\">\n    <div class=\"description\">Temperatuur Buiten</div>\n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.outdoorTemp) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">&#176C</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#drop\"></use></svg></div>\n\t\t\t<div class=\"value\">{{itemValue(config.outdoorHumidity) | number:0}} %</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=1&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n  </div> \n\n  \t<div class=\"bigDash\">\n    <div class=\"description\">Gasverbruik Vandaag</div>\n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/Buildings-72.svg#Buildings-72\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.todayGasUsage) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">m3</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#drop\"></use></svg></div>\n\t\t\t<div class=\"value\">{{itemValue(config.totalGasUsage) | number:0}} m3</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=20&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n  </div>   \n  \n </div>\n\n<div class=\"section\">\n\t<div class=\"description\">Status</div>\n\n\t<div class=\"controls\">\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Gateway RSSI</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.DRUgatewayRSSI)}} %</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#clock\"></use></svg></div>\n\t\t\t<div class=\"name\">DFGT RSSI</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.DRUdfgtRSSI)}} %</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Room Temp</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.DRUroomTemp)}} &#176;</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Fault Code</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.DRUfaultCode)}}</div></div>\t\t\t\n\t\t</div>\n    \n    <div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Flame Height</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.DRUflameHeight)}} %</div></div>\t\t\t\n\t\t</div>\n    \n\t</div>\n\n</div>\n\n\n\n\n\n\n\n",
+    "name": "Fireplace_Info",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "fireplaceState",
+            "label": "Fireplace State",
+            "description": "Item for showing the current Fireplace state"
+        },
+        {
+            "type": "item",
+            "id": "fireplaceControl",
+            "label": "Fireplace Control",
+            "description": "Item for showing current fireplace control selection"
+        },
+        {
+            "type": "item",
+            "id": "DRUgatewayRSSI",
+            "label": "DRU Gateway RSSI",
+            "description": "Item for DRU gateway RSSI"
+        },
+        {
+            "type": "item",
+            "id": "DRUdfgtRSSI",
+            "label": "DRU DFGT RSSI",
+            "description": "Item for DRU DFGT RSSI"
+        },
+        {
+            "type": "item",
+            "id": "DRUroomTemp",
+            "label": "DRU Room Temperature",
+            "description": "Item for DRU room temperature"
+        },
+        {
+            "type": "item",
+            "id": "DRUfaultCode",
+            "label": "DRU Fault Code",
+            "description": "Item showing current DRU fault code"
+        },
+        {
+            "type": "item",
+            "id": "DRUflameHeight",
+            "label": "DRU Flame Height",
+            "description": "Item showing the current DRU flame height"
+        },
+        {
+            "type": "item",
+            "id": "indoorTemp",
+            "label": "Indoor Temperature",
+            "description": "Item for Indoor Temperature"
+        },
+        {
+            "type": "item",
+            "id": "indoorHumidity",
+            "label": "Indoor Humidity",
+            "description": "Item for indoor humidity"
+        },
+        {
+            "type": "item",
+            "id": "outdoorTemp",
+            "label": "Outdoor Temperature",
+            "description": "Item for outdoor temperature"
+        },
+        {
+            "type": "item",
+            "id": "outdoorHumidity",
+            "label": "Outdoor Humidity",
+            "description": "Item for outdoor humidity"
+        },
+        {
+            "type": "item",
+            "id": "todayGasUsage",
+            "label": "Today Gas Usage",
+            "description": "Item for today's gas usage"
+        },
+        {
+            "type": "item",
+            "id": "totalGasUsage",
+            "label": "Total Gas Usage",
+            "description": "Item for total gas usage"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<div ng-if=\"itemValue(config.control) !='PLAY'\" class=\"gbtn\" ng-click=\"sendCmd(config.control,'PLAY')\">&#9658;</div>\n<div ng-if=\"itemValue(config.control) =='PLAY'\" class=\"gbtn\" ng-click=\"sendCmd(config.control,'PAUSE')\">l l</div>\n<div ng-if=\"itemValue(config.control) =='NULL'\" class=\"gbtn\" ng-click=\"sendCmd(config.control,'PLAY')\">&#9658;</div>",
+    "name": "Music_play_button_widget",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "control",
+            "label": "Control",
+            "description": "Item for player control"
+        }
+    ]
+}

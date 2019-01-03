@@ -1,0 +1,13 @@
+{
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<div class=\"gbtn\" ng-click=\"sendCmd(config.control, 'PREVIOUS')\">l&#9668;</div>",
+    "name": "Music_previous_button_widget",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "control",
+            "label": "Control",
+            "description": "Item for Play Control"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+{
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<div class=\"section\">\n   \n  \t<div class=\"bigDash\">\n    <div class=\"description\">CPU Load</div>\n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.SystemInfoCpuPerc) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">%</div>\n\t\t\t</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=5&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>\n  \n\t<div class=\"bigDash\">\n    <div class=\"description\">Available Memory</div>\n\t\t<div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#sim-card\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.SystemInfoMemAvailPerc) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">%</div>\n\t\t\t</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=6&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>  \n\n  <div class=\"bigDash\">\n    <div class=\"description\">Available Storage</div>\n\t\t<div class=\"top\">\n      <div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#drive-3\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.SystemInfoStorAvailPerc) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">%</div>\n\t\t\t</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=7&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>  \n\n</div>\n\n\n<div class=\"section\">\n\t<div class=\"description\">System Info</div>\n\n\t<div class=\"controls\">\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#clock\"></use></svg></div>\n\t\t\t<div class=\"name\">Uptime</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SystemInfoUptime) /3600 | number:2 }} hours</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">MQTT clients</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.MQTTBrokerClients)}}</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">IP address</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SystemInfoIP)}}</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">CPU Load (1min)</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SystemInfoCpuPerc1) | number:1 }}%</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">CPU Load (5min)</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SystemInfoCpuPerc5) | number:1 }}%</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">CPU Load (15min)</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SystemInfoCpuPerc15) | number:1 }}%</div></div>\t\t\t\n\t\t</div>\n\n\t</div>\n\n</div>\n\n\n\n\n\n",
+    "name": "System Widget",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "SystemInfoCpuPerc",
+            "label": "CPU Load in Percentage",
+            "description": "Item for CPU Load in Percentage"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoMemAvailPerc",
+            "label": "Memory available in Percentage",
+            "description": "Item for Memory available in Percentage"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoStorAvailPerc",
+            "label": "Storage available in Percentage",
+            "description": "Item for Storage available in Percentage"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoUptime",
+            "label": "Uptime information",
+            "description": "Item for Uptime information"
+        },
+        {
+            "type": "item",
+            "id": "MQTTBrokerClients",
+            "label": "MQTT connected clients",
+            "description": "Item for the amount of MQTT connected clients"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoIP",
+            "label": "System IP address",
+            "description": "Item for System IP address"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoCpuPerc1",
+            "label": "CPU Load average per 1 minute",
+            "description": "Item for CPU Load average per 1 minute"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoCpuPerc5",
+            "label": "CPU Load average per 5 minutes",
+            "description": "Item for CPU Load average per 5 minutes"
+        },
+        {
+            "type": "item",
+            "id": "SystemInfoCpuPerc15",
+            "label": "CPU Load average per 15 minutes",
+            "description": "Item for CPU Load average per 15 minutes"
+        }
+    ]
+}

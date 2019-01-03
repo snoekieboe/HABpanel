@@ -1,0 +1,79 @@
+{
+    "template": "<style>\n.section {\n\twidth: 100%;\n\tbackground: #212124;\n\tpadding: 10px 10px 5px 10px;\n\toverflow: hidden;\n\tmargin-bottom: 5px;\n\tmargin-right: 10px;\t\n\tfloat: left;\n\ttext-align: left;\n\tcolor: white;\n}\n</style>\n\n<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n\n            \n   <span class=\"music_artist\">{{itemValue(config.vacuumState)}}</span><br><br><span class=\"music_track\">{{itemValue(config.vacuumError)}}</span><br><br></br></br>\n            \n\n            \n\n<div class=\"section\">\n\t<div class=\"description\">Status</div>\n\n\t<div class=\"controls\">\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Battery</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumBatteryStatus) | number:0 }} %</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#clock\"></use></svg></div>\n\t\t\t<div class=\"name\">Cleaning time</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumCleaningTime)}} min</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Cleaning area</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumCleaningArea)}} m2</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Error</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumError)}}</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Fan power</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumFanPower)}}</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Do no Disturb</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumDND)}}</div></div>\t\t\t\n\t\t</div>\n    \n    <div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">State</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumState)}}</div></div>\t\t\t\n\t\t</div>\n    \n    <div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#processor\"></use></svg></div>\n\t\t\t<div class=\"name\">Today's cycles</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumCycle)}}</div></div>\t\t\t\n\t\t</div>\n\n\t</div>\n\n</div>\n\n<div class=\"section\">\n\t<div class=\"description\">Consumables</div>\n\n\t<div class=\"controls\">\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Battery</div>\n\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumBatteryStatus) | number:0}}%</div></div>\t\t\t\n\t\t\t<div class=\"fuelGroup\">\n\t\t\t\t<div class=\"fuel\">\n\t\t\t\t\t<div class=\"fuelShell\"><div class=\"fuelLevel {{itemValue(config.vacuumBatteryStatus)}}\" style=\"width: {{itemValue(config.vacuumBatteryStatus) | number:0}}%;\"></div></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>  \n        \n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Main Brush</div>\n\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumMainBrush) | number:0}}%</div></div>\t\t\t\n\t\t\t<div class=\"fuelGroup\">\n\t\t\t\t<div class=\"fuel\">\n\t\t\t\t\t<div class=\"fuelShell\"><div class=\"fuelLevel {{itemValue(config.vacuumMainBrush)}}\" style=\"width: {{itemValue(config.vacuumMainBrush) | number:0}}%;\"></div></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>  \n        \n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Side Brush</div>\n\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumSideBrush) | number:0}}%</div></div>\t\t\t\n\t\t\t<div class=\"fuelGroup\">\n\t\t\t\t<div class=\"fuel\">\n\t\t\t\t\t<div class=\"fuelShell\"><div class=\"fuelLevel {{itemValue(config.vacuumSideBrush)}}\" style=\"width: {{itemValue(config.vacuumSideBrush) | number:0}}%;\"></div></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>  \n        \n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Filter</div>\n\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumFilter) | number:0}}%</div></div>\t\t\t\n\t\t\t<div class=\"fuelGroup\">\n\t\t\t\t<div class=\"fuel\">\n\t\t\t\t\t<div class=\"fuelShell\"><div class=\"fuelLevel {{itemValue(config.vacuumFilter)}}\" style=\"width: {{itemValue(config.vacuumFilter) | number:0}}%;\"></div></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>   \n        \n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#battery\"></use></svg></div>\n\t\t\t<div class=\"name\">Dirt Sensor</div>\n\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.vacuumDirtSensor) | number:0}}%</div></div>\t\t\t\n\t\t\t<div class=\"fuelGroup\">\n\t\t\t\t<div class=\"fuel\">\n\t\t\t\t\t<div class=\"fuelShell\"><div class=\"fuelLevel {{itemValue(config.vacuumDirtSensor)}}\" style=\"width: {{itemValue(config.vacuumDirtSensor) | number:0}}%;\"></div></div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>  \n        \n\t\t\t</div>\n\t\t</div>  \n\n\n\n\n\n",
+    "name": "Ming_Lee_Info",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "vacuumBatteryStatus",
+            "label": "Vacuum Battery Status",
+            "description": "Item for vacuum battery status in %"
+        },
+        {
+            "type": "item",
+            "id": "vacuumCleaningTime",
+            "label": "Vacuum Cleaning Time",
+            "description": "Item for vacuum cleaning time in minutes"
+        },
+        {
+            "type": "item",
+            "id": "vacuumCleaningArea",
+            "label": "Vacuum Cleaning Area",
+            "description": "Item for vacuum cleaning area in m2"
+        },
+        {
+            "type": "item",
+            "id": "vacuumError",
+            "label": "Vacuum Error",
+            "description": "Item showing vacuum error messages"
+        },
+        {
+            "type": "item",
+            "id": "vacuumFanPower",
+            "label": "Vacuum Fan Power",
+            "description": "Item for vacuum fan power"
+        },
+        {
+            "type": "item",
+            "id": "vacuumDND",
+            "label": "Vacuum Do no Disturb",
+            "description": "Item showing if DND is active"
+        },
+        {
+            "type": "item",
+            "id": "vacuumState",
+            "label": "Vacuum State",
+            "description": "Item showing the current vacuum state"
+        },
+        {
+            "type": "item",
+            "id": "vacuumCycle",
+            "label": "Vacuum Cycle",
+            "description": "Item showing the amount of vacuum cycle's (today)"
+        },
+        {
+            "type": "item",
+            "id": "vacuumMainBrush",
+            "label": "Vacuum Main brush",
+            "description": "Item for vacuum main brush in %"
+        },
+        {
+            "type": "item",
+            "id": "vacuumSideBrush",
+            "label": "Vacuum Side Brush",
+            "description": "Item for side brush in %"
+        },
+        {
+            "type": "item",
+            "id": "vacuumFilter",
+            "label": "Vacuum Filter",
+            "description": "Item for filter in %"
+        },
+        {
+            "type": "item",
+            "id": "vacuumDirtSensor",
+            "label": "Vacuum Dirt Sensor",
+            "description": "Item for dirt sensor in %"
+        }
+    ]
+}

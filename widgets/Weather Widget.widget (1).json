@@ -1,0 +1,157 @@
+{
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<div class=\"section\">\n   \n  \t<div class=\"bigDash\">\n    <div class=\"description\">Temperatuur</div>\n    <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.OutdoorTemp) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">&#176C</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\">voelt als {{itemValue(config.OutdoorFeelingTemp) | number:0}} &#176C</div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#drop\"></use></svg></div>\n\t\t\t<div class=\"value\">{{itemValue(config.OutdoorHumidity) | number:0}} %</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=1&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>\n  \n\t<div class=\"bigDash\">\n    <div class=\"description\">Regen</div>\n\t\t<div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#umberla\"></use></svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.RainFallHour) | number:1}}</div>\n\t\t\t\t<div class=\"sub\">mm</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#umberla\"></use></svg></div>\n\t\t\t<div class=\"value\">1h: {{itemValue(config.RainFallHour) | number:0}} mm</div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#umberla\"></use></svg></div>\n\t\t\t<div class=\"value\">24h: {{itemValue(config.RainFallDay) | number:0}} mm</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=2&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>  \n\n  <div class=\"bigDash\">\n    <div class=\"description\">Wind</div>\n\t\t<div class=\"top\">\n      <div class=\"icon on wind\"><div style=\"transform: rotate({{itemValue(config.WindDirectionDegrees) | number:0}}deg);\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#navigate\"></use></svg></div></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\">{{itemValue(config.WindSpeed) | number:0}}</div>\n\t\t\t\t<div class=\"sub\">km/h</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"bottom\">\n      <div class=\"icon off wind\"><div style=\"transform: rotate({{itemValue(config.WindDirectionDegrees) | number:0}}deg);\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#navigate\"></use></svg></div></div>\n\t\t\t<div class=\"value\">{{itemValue(config.WindDirectionDegrees) | number:0}} &#176</div>\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#wind\"></use></svg></div>\n\t\t\t<div class=\"value\">{{itemValue(config.WindGust) | number:0}} km/h ({{itemValue(config.WindDirectionDegrees) | number:0}} &#176)</div>\n\t\t</div>\n    <div class=\"graph\">\n\t\t\t<img width=\"250\" height=\"100\" src=\"http://172.16.11.4:3000/render/dashboard-solo/db/openhab?panelId=3&orgId=1&from=now-24h&to=now&width=500&height=250&tz=UTC%2B02%3A00\" />\n\t\t\t<div class=\"legend\">Afgelopen 24 uur</div>\n    </div>\n\t</div>  \n\n</div>\n\n<div class=\"section\">\n  <div class=\"description\">Weersverwachting</div>\n\t<div class=\"sectionIconContainer\"><div class=\"sectionIcon\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#sunset\"></use></svg></div></div>\n\t<div ng-init=\"ServerPath='http://172.16.11.4:8080/static'; IconSet='colorful'\">\n\n\t<div class=\"controls\">\n\n\n  \t<div class=\"bigDash\">\n\t   <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\">Vandaag</svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\"><img src=\"{{ServerPath}}/images/{{IconSet}}/{{itemValue(config.WFTForecastConditions).replace(' ','-') | lowercase }}.png\"  width=\"96\" height=\"96\"/></div>\n\t\t\t\t<div class=\"sub\">Vandaag</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\"><font color=\"red\"><b>{{'%.0f' | sprintf:itemValue(config.WFTMaximumTemperature)}} °C </b></font> / <font color=\"#338EFF\"><b>{{'%.0f' | sprintf:itemValue(config.WFTMinimumTemperature)}} °C</b></font> <br> {{itemValue(config.WFTForecastConditions)}}</div>\n\t\t</div>\n\t</div>\t\t\n\t\t\n  \t<div class=\"bigDash\">\n\t   <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\">{{itemValue(config.WFD1ForecastTime) | date:'EEEE'}}</svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\"><img src=\"{{ServerPath}}/images/{{IconSet}}/{{itemValue(config.WFD1ForecastConditions).replace(' ','-') | lowercase }}.png\"  width=\"96\" height=\"96\"/></div>\n\t\t\t\t<div class=\"sub\">{{itemValue(config.WFD1ForecastTime) | date:'EEEE'}}</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\"><font color=\"red\"><b>{{'%.0f' | sprintf:itemValue(config.WFD1MaximumTemperature)}} °C </b></font> / <font color=\"#338EFF\"><b>{{'%.0f' | sprintf:itemValue(config.WFD1MinimumTemperature)}} °C</b></font> <br> {{itemValue(config.WFD1ForecastConditions)}}</div>\n\t\t</div>\n\t</div>\t\n\n  \t<div class=\"bigDash\">\n\t   <div class=\"top\">\n\t\t\t<div class=\"icon on\"><svg viewBox=\"0 0 48 48\">{{itemValue(config.WFD2ForecastTime) | date:'EEEE'}}</svg></div>\n\t\t\t<div class=\"value\">\n\t\t\t\t<div class=\"main\"><img src=\"{{ServerPath}}/images/{{IconSet}}/{{itemValue(config.WFD2ForecastConditions).replace(' ','-') | lowercase }}.png\"  width=\"96\" height=\"96\"/></div>\n\t\t\t\t<div class=\"sub\">{{itemValue(config.WFD2ForecastTime) | date:'EEEE'}}</div>\n\t\t\t</div>\n\t\t</div>\n\t\t\t<div class=\"bottom\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#thermometer-3\"></use></svg></div>\n\t\t\t<div class=\"value\"><font color=\"red\"><b>{{'%.0f' | sprintf:itemValue(config.WFD2MaximumTemperature)}} °C </b></font> / <font color=\"#338EFF\"><b>{{'%.0f' | sprintf:itemValue(config.WFD2MinimumTemperature)}} °C</b></font> <br> {{itemValue(config.WFD2ForecastConditions)}}</div>\n\t\t</div>\n\t</div>\n </div>\t\n</div>\t\n</div>\t\n\n\n<div class=\"section\">\n\t<div class=\"sectionIconContainer\"><div class=\"sectionIcon\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#stars\"></use></svg></div></div>\n\t<div class=\"description\">Astro</div>\n\n\t<div class=\"controls\">\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#half-light\"></use></svg></div>\n\t\t\t<div class=\"name\">Sunrise</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SunriseTime) | date:'HH:mm'}}</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#shade\"></use></svg></div>\n\t\t\t<div class=\"name\">Sunset</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SunsetTime) | date:'HH:mm'}}</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#sun\"></use></svg></div>\n\t\t\t<div class=\"name\">Daylight</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.DayLightDuration) | number:0}} min</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#globe\"></use></svg></div>\n\t\t\t<div class=\"name\">Sun Azimuth</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SunAzimuth)}}&#176</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#sun-nwave\"></use></svg></div>\n\t\t\t<div class=\"name\">Sun Elevation</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.SunElevation)}}&#176</div></div>\t\t\t\n\t\t</div>\n\n\t\t<div class=\"widget\">\n\t\t\t<div class=\"icon off\"><svg viewBox=\"0 0 48 48\"><use xlink:href=\"/static/matrix-theme/squidink.svg#half-moon\"></use></svg></div>\n\t\t\t<div class=\"name\">Moon Phase</div>\n\t\t\t<div class=\"valueGroup\"><div class=\"value\">{{itemValue(config.MoonPhase)}}%</div></div>\t\t\t\n\t\t</div>\n\n\t</div>\n\n</div>\n\n <div class=\"section\">\n   \n  \t<div class=\"bigDash\">\n\t\t<object data=\"/static/matrix-theme/shaddow.svg?{{itemValue(config.SunAzimuth)}}\" type=\"image/svg+xml\"></object>\n\t</div>\n  \n</div> \n\n\n\n\n",
+    "name": "Weather Widget",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "OutdoorTemp",
+            "label": "Outdoor Temperature",
+            "description": "Item for Outdoor Temperature"
+        },
+        {
+            "type": "item",
+            "id": "OutdoorFeelingTemp",
+            "label": "Outdoor Feeling Temperature",
+            "description": "Item for Outdoor Feeling Temperature"
+        },
+        {
+            "type": "item",
+            "id": "OutdoorHumidity",
+            "label": "Outdoor Humidity",
+            "description": "Item for Outdoor Humidity"
+        },
+        {
+            "type": "item",
+            "id": "RainFallHour",
+            "label": "Rain Fall per Hour",
+            "description": "Item for Rain Fall per Hour"
+        },
+        {
+            "type": "item",
+            "id": "RainFallDay",
+            "label": "Rain Fall per Day",
+            "description": "Item for Rain Fall per Day"
+        },
+        {
+            "type": "item",
+            "id": "WindDirectionDegrees",
+            "label": "Wind Direction in Degrees",
+            "description": "Item for Wind Direction in Degrees"
+        },
+        {
+            "type": "item",
+            "id": "WindSpeed",
+            "label": "Wind Speed",
+            "description": "Item for Wind Speed"
+        },
+        {
+            "type": "item",
+            "id": "WindGust",
+            "label": "Wind Gust",
+            "description": "Item for Wind Gust"
+        },
+        {
+            "type": "item",
+            "id": "WFTForecastConditions",
+            "label": "Todays Forecast Conditions",
+            "description": "Item for Todays Forecast Conditions"
+        },
+        {
+            "type": "item",
+            "id": "WFTMaximumTemperature",
+            "label": "Todays Maximum Temperature",
+            "description": "Item for Todays Maximum Temperature"
+        },
+        {
+            "type": "item",
+            "id": "WFTMinimumTemperature",
+            "label": "Todays Minimum Temperature",
+            "description": "Item for Todays Minimum Temperature"
+        },
+        {
+            "type": "item",
+            "id": "WFD1ForecastTime",
+            "label": "Day 1 Forecast Time",
+            "description": "Item for Day 1 Forecast Time"
+        },
+        {
+            "type": "item",
+            "id": "WFD1ForecastConditions",
+            "label": "Day 1 Forecast Conditions",
+            "description": "Item for Day 1 Forecast Conditions"
+        },
+        {
+            "type": "item",
+            "id": "WFD1MaximumTemperature",
+            "label": "Day 1 Maximum Temperature",
+            "description": "Item for Day 1 Maximum Temperature"
+        },
+        {
+            "type": "item",
+            "id": "WFD1MinimumTemperature",
+            "label": "Day 1 Minimum Temperature",
+            "description": "Item for Day 1 Minimum Temperature"
+        },
+        {
+            "type": "item",
+            "id": "WFD2ForecastTime",
+            "label": "Day 2 Forecast Time",
+            "description": "Item for Day 2 Forecast Time"
+        },
+        {
+            "type": "item",
+            "id": "WFD2ForecastConditions",
+            "label": "Day 2 Forecast Conditions",
+            "description": "Item for Day 2 Forecast Conditions"
+        },
+        {
+            "type": "item",
+            "id": "WFD2MaximumTemperature",
+            "label": "Day 2 Maximum Temperature",
+            "description": "Item Day 2 Maximum Temperature"
+        },
+        {
+            "type": "item",
+            "id": "WFD2MinimumTemperature",
+            "label": "Day 2 Minimum Temperature",
+            "description": "Item for Day 2 Minimum Temperature"
+        },
+        {
+            "type": "item",
+            "id": "SunriseTime",
+            "label": "Sunrise Time",
+            "description": "Item for Sunrise Time"
+        },
+        {
+            "type": "item",
+            "id": "SunsetTime",
+            "label": "Sunset Time",
+            "description": "Item for Sunset Time"
+        },
+        {
+            "type": "item",
+            "id": "DayLightDuration",
+            "label": "Day Light Duration",
+            "description": "Item for Day Light Duration"
+        },
+        {
+            "type": "item",
+            "id": "SunAzimuth",
+            "label": "Sun Azimuth",
+            "description": "Item for Sun Azimuth"
+        },
+        {
+            "type": "item",
+            "id": "SunElevation",
+            "label": "Sun Elevation",
+            "description": "Item for Sun Elevation"
+        },
+        {
+            "type": "item",
+            "id": "MoonPhase",
+            "label": "Moon Phase",
+            "description": "Item for Moon Phase"
+        }
+    ]
+}

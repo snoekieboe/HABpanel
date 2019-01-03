@@ -1,0 +1,39 @@
+{
+    "template": "<style>\n    @media screen and (max-width: 767px) {\n \t      .alarmKpMainContainer {\n  \t\t\t\t\theight: 300px !important;\n        }\n\t  }\n    .alarmKpMainContainer {\n        width: 100%;\n        height: 90%;\n        left: 0;\n        top: 0;\n  \t\t\twhite-space: nowrap;\n    }\n\n    .alarmKpMainContainer .container {\n        width: 100%;\n        height: 100%;\n        position: relative;\n        padding-top: 0;\n    }\n\n    .alarmKpMainContainer .container .row {\n        height: 25%;\n    }\n\n    .alarmKpMainContainer button.btn-default {\n        background: #424242;\n    }\n\n    .alarmKpMainContainer button.leftmost {\n        margin-left: 0;\n    }\n\n    .alarmKpMainContainer button.rightmost {\n        margin-right: 0;\n    }\n\n    .alarmKpMainContainer button.col-sm-3 {\n        width: calc(25% - 10px);\n        height: calc(100% - 10px);\n        margin: 5px;\n    }\n\n    .alarmKpMainContainer button {\n        position: relative;\n        overflow: hidden;\n        border-radius: 4px;\n        border-color: transparent !important;\n        color: #fff !important;\n        font-size: 2em;\n    }\n\n    .alarmKpMainContainer button.leftmost {\n        font-size: 1.25em;\n    }\n\n    .alarmKpMainContainer button:focus,\n    .alarmKpMainContainer button:active {\n        outline: none !important;\n    }\n\n    .alarmKpMainContainer button:focus:not(:active)::after {\n        animation: ripple 1s ease-out;\n    }\n\n    .alarmKpMainContainer button:after {\n        content: '';\n        position: absolute;\n        top: 50%;\n        left: 50%;\n        width: 5px;\n        height: 5px;\n        background: rgba(255, 255, 255, .5);\n        opacity: 0;\n        border-radius: 100%;\n        transform: scale(1, 1) translate(-50%);\n        transform-origin: 50% 50%;\n    }\n\n    .alarmKpMainContainer button .subText {\n        font-size: .5em;\n        position: absolute;\n        top: 7px;\n        right: 7px;\n        font-style: italic;\n        color: #7b6845;\n    }\n\n    .alarmKpMainContainer button .subText.bigger {\n        font-size: .75em;\n    }\n\n    @keyframes ripple {\n        0% {\n            transform: scale(0, 0);\n            opacity: 1;\n        }\n        20% {\n            transform: scale(25, 25);\n            opacity: 1;\n        }\n        100% {\n            opacity: 0;\n            transform: scale(40, 40);\n        }\n    }\n\n    .alarmKpMainContainer .subText.offColor {\n        color: #449d44;\n    }\n\n    .alarmKpMainContainer .subText.awayColor {\n        color: #ec971f;\n    }\n\n    .alarmKpMainContainer .subText.stayColor {\n        color: #31b0d5;\n    }\n  \n  \t.alarmKpMainContainer .mask {\n\t\t\t\ttext-align: center;\n  \t\t\tbackground: #fff;\n  \t\t\tcolor:#333;\n  \t\t\twidth:100%;\n  \t\t\theight: 45px;\n  \t}\n  \n</style>\n<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n<div class=\"alarmKpMainContainer\">\n\n\t\t<div class=\"mask\" ng-form=\"myKeyPad\" ng-init=\"myCode=''\"> \n    \t\t\t<label style=\"font-size:30px\">{{ myCode | limitTo: config.max_length }}</label>\n  \t</div>  \n  \n    <div class=\"container\">\n        <div class=\"row gutter4\">\n            <button data-ng-click=\"sendCmd(config.entered_value, ( myCode + '_Home' ));myCode=''\" class=\"btn btn-success col-sm-3 leftmost\">\n              <span data-ng-bind-html=\"config.mainLabel_off\"></span>\n              <span class=\"subText bigger\">disarm</span>\n          </button>\n            <button ng-click=\"myCode= myCode + 1\" class=\"btn btn-default col-sm-3\">\n            1\n          </button>\n            <button ng-click=\"myCode= myCode + 2\" class=\"btn btn-default col-sm-3\">\n            2 \n          </button>\n            <button ng-click=\"myCode= myCode + 3\" class=\"btn btn-default col-sm-3 rightmost\">\n            3\n          </button>\n        </div>\n        <div class=\"row gutter4\">\n            <button data-ng-click=\"sendCmd(config.entered_value, ( myCode + '_Away' ));myCode=''\" class=\"btn btn-warning col-sm-3 leftmost\">\n              <span data-ng-bind-html=\"config.mainLabel_armAway\"></span>\n              <span class=\"subText bigger\">arm away</span>              \n          </button>\n            <button ng-click=\"myCode= myCode + 4\" class=\"btn btn-default col-sm-3\">\n            4\n          </button>\n            <button ng-click=\"myCode= myCode + 5\" class=\"btn btn-default col-sm-3\">\n            5\n          </button>\n            <button ng-click=\"myCode= myCode + 6\" class=\"btn btn-default col-sm-3 rightmost\">\n            6\n          </button>\n        </div>\n        <div class=\"row gutter4\">\n            <button data-ng-click=\"sendCmd(config.entered_value, ( myCode + '_Sleep' ));myCode=''\" class=\"btn btn-info col-sm-3 leftmost\">\n            <span data-ng-bind-html=\"config.mainLabel_armStay\"></span>\n            <span class=\"subText bigger\">arm sleep</span>\n          </button>\n            <button ng-click=\"myCode= myCode + 7\" class=\"btn btn-default col-sm-3\">\n            7\n          </button>\n            <button ng-click=\"myCode= myCode + 8\" class=\"btn btn-default col-sm-3\">\n            8\n          </button>\n            <button ng-click=\"myCode= myCode + 9\" class=\"btn btn-default col-sm-3\">\n            9\n          </button>\n        </div>\n        <div class=\"row gutter4\">\n            <button ng-click=\"myCode=''\" class=\"btn btn-danger col-sm-3 leftmost\"><strong><em>Clear</em></strong></button>\n            <button ng-click=\"myCode= myCode + '*'\" class=\"btn btn-default col-sm-3\">\n            *\n          </button>\n            <button ng-click=\"myCode= myCode + 0\" class=\"btn btn-default col-sm-3\">0</button>\n            <button ng-click=\"myCode= myCode + '#'\" class=\"btn btn-default col-sm-3 rightmost\">#</button>\n        </div>\n    </div>\n</div>",
+    "name": "Alarm panel",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "string",
+            "id": "mainLabel_off",
+            "label": "Off Text",
+            "default": "Off",
+            "description": "Main Label for Off. You can change this to anything. I prefer \"Patay\" which means off or dead in my language. You can use simple html here such as Line1<br>Line2"
+        },
+        {
+            "type": "string",
+            "id": "mainLabel_armStay",
+            "label": "Stay Text",
+            "default": "Stay",
+            "description": "Main Label for Arm Stay. You can change this to anything. I prefer \"Dito Lang\" which means \"just here\" in my language. You can use simple html here such as Line1<br>Line2"
+        },
+        {
+            "type": "string",
+            "id": "mainLabel_armAway",
+            "label": "Away Text",
+            "default": "Away",
+            "description": "Main Label for Arm Away. You can change this to anything. I prefer \"Alis Muna\" which means \"Leaving..\" in my language. You can use simple html here such as Line1<br>Line2"
+        },
+        {
+            "type": "number",
+            "id": "max_length",
+            "label": "Max Length"
+        },
+        {
+            "type": "item",
+            "id": "entered_value",
+            "label": "entered_value"
+        }
+    ],
+    "description": "Alarm panel"
+}

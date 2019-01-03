@@ -1,0 +1,26 @@
+{
+    "template": "<style>\n.btnsquare {display:inline-block}\n.btnsquare {text-align:center}\n.btnsquare:before {border-radius:10px}\n.btnsquare {position:relative;cursor:pointer;width:150px;height:150px;line-height:100px;background:#394636;margin:0 auto;color:rgba(126,178,109,1);text-shadow:-1px -1px 0 rgba(255,255,255,.8),1px 1px 2px rgba(0,0,0,1);font-size:2em;font-family:sans-serif;box-shadow:inset 1px 1px 2px rgba(255,255,255,.3),inset 3px 15px 45px rgba(255,255,255,.1),inset -1px -1px 2px rgba(0,0,0,.5),inset -3px -15px 45px rgba(0,0,0,.2),1px 5px 30px -4px rgba(0,0,0,1);-webkit-transition:.1s ease-out;-moz-transition:.1s ease-out;-o-transition:.1s ease-out;transition:.1s ease-out}\n.btnsquare:before {content:\"\";background:#1A1A1A;width:170px;height:170px;position:absolute;top:-10px;left:-10px;z-index:-1;box-shadow:inset -1px -1px 2px rgba(255,255,255,.3),inset -5px -15px 40px rgba(255,255,255,.1),inset 1px 1px 2px rgba(0,0,0,.5),inset 5px 15px 40px rgba(0,0,0,.2),-2px -40px 50px -20px rgba(255,255,255,.1),2px 35px 50px -10px rgba(0,0,0,.4),0 0 25px 8px rgba(60,60,60,1)}\n.btnsquare:active {color:rgba(0,0,0,.7);text-shadow:1px 1px 0 rgba(255,255,255,.15);box-shadow:inset 1px 1px 2px rgba(255,255,255,.3),inset 3px 15px 45px rgba(0,0,0,.2),inset -1px -1px 2px rgba(0,0,0,.5),inset -3px -15px 45px rgba(255,255,255,.1),1px 5px 10px -4px rgba(0,0,0,1)}\n</style>\n<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<div class=\"btnsquare\">\n  <img ng-src=\"{{(config.radioLogo)}}\" width=\"100%\" height=\"100%\" align=\"middle\" ng-click=\"sendCmd(config.radioChannelSelection, config.radioChannel)\"></img>\n</div>",
+    "name": "Music_Radion_Channel_button_widget",
+    "author": "Roel S",
+    "settings": [
+        {
+            "type": "item",
+            "id": "radioChannelSelection",
+            "label": "Radio Channel Selection",
+            "description": "Item for radio channel selection"
+        },
+        {
+            "type": "string",
+            "id": "radioLogo",
+            "default": "/static/matrix-theme/noalbumart.jpg",
+            "label": "Radio Channel Logo",
+            "description": "Path to the radio channel logo picture"
+        },
+        {
+            "type": "string",
+            "description": "Name of the radio channel to be selected (as listed in the SONOS app)",
+            "id": "radioChannel",
+            "label": "Radio Channel"
+        }
+    ]
+}

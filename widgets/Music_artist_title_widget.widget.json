@@ -1,0 +1,19 @@
+{
+    "author": "Roel S",
+    "name": "Music artist title widget",
+    "template": "<div oc-lazy-load=\"['/static/matrix-theme/helper.js','/static/matrix-theme/jquery-3.2.1.min.js','/static/matrix-theme/matrix.js']\"></div>\n\n<span class=\"music_artist\">{{itemValue(config.artist)}}</span><br><br><span class=\"music_track\">{{itemValue(config.title) | limitTo: 30}}{{itemValue(config.title).length > 34 ? '...' : ''}}</span>",
+    "settings": [
+        {
+            "type": "item",
+            "id": "artist",
+            "label": "Artist",
+            "description": "Item for artist"
+        },
+        {
+            "type": "item",
+            "id": "title",
+            "label": "Title",
+            "description": "Item for title"
+        }
+    ]
+}
